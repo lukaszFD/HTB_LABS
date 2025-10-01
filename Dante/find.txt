@@ -35,3 +35,9 @@ find / -perm -u=s -o -perm -g=s 2>/dev/null
 /usr/bin/find . -exec /bin/bash -p \; -quit
 
 cat /home/james/user.txt
+
+# Find the file named 'user.txt' anywhere on the system
+find / -name "user.txt" 2>/dev/null
+
+# Find the file named 'root.txt' anywhere on the system
+find / -name "root.txt" 2>/dev/null
