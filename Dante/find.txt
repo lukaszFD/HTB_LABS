@@ -1,0 +1,14 @@
+# Search for user.txt everywhere on the filesystem
+find / -name user.txt 2>/dev/null
+
+# Search for database, configuration files, and password files
+find / -name "*config*" 2>/dev/null
+find / -name "*pass*" 2>/dev/null
+
+# Find files with SUID permission set
+find / -perm -4000 2>/dev/null
+
+# Find files owned by www-data or writable by www-data
+find / -writable 2>/dev/null
+
+python3 -c 'import pty; pty.spawn("/bin/bash")'
