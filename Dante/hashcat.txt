@@ -3,5 +3,9 @@ wp_hashes.txt
 admin:$P$BkTfSjp9TVOaxVgalnY8xxp3N6CEVR1
 james:$P$B/kdWnMDyh1oMT0QCG9YAyEu8Yt.M0.
 
+# Change file ownership to your user
+sudo chown lukaszfd84:lukaszfd84 wp_hashes.txt
+
 # Set hashcat to PHPass mode (400) and use rockyou.txt wordlist
+# Correct syntax: hashcat -m <mode> <hash_file> <wordlist> [options]
 hashcat -m 400 wp_hashes.txt /usr/share/wordlists/rockyou.txt --force
