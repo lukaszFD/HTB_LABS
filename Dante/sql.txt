@@ -1,0 +1,4 @@
+# Execute SQL query directly, logging into the 'wordpress' database
+mysql -u shaun -ppassword -D wordpress -e "SELECT user_login, user_pass FROM wp_users;"
+
+use wordpress; show tables;
