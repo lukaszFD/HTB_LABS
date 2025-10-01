@@ -1,0 +1,12 @@
+┌─[eu-dedi-pro-61]─[10.10.14.64]─[lukaszfd84@htb-x64wczkesu]─[~]
+└──╼ [★]$ wget http://10.10.110.100:65000/wordpress/.wp-config.php.swp
+--2025-10-01 07:33:53--  http://10.10.110.100:65000/wordpress/.wp-config.php.swp
+Connecting to 10.10.110.100:65000... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 12288 (12K)
+Saving to: ‘.wp-config.php.swp’
+
+.wp-config.php.swp              100%[=====================================================>]  12.00K  --.-KB/s    in 0s
+
+2025-10-01 07:33:53 (111 MB/s) - ‘.wp-config.php.swp’ saved [12288/12288]
+

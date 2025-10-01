@@ -1,0 +1,269 @@
+┌─[eu-dedi-pro-61]─[10.10.14.64]─[lukaszfd84@htb-x64wczkesu]─[~]
+└──╼ [★]$ wpscan --url http://10.10.110.100:65000/wordpress
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.27
+
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[i] Updating the Database ...
+[i] Update completed.
+
+[+] URL: http://10.10.110.100:65000/wordpress/ [10.10.110.100]
+[+] Started: Wed Oct  1 07:30:10 2025
+
+Interesting Finding(s):
+
+[+] Headers
+ | Interesting Entry: Server: Apache/2.4.41 (Ubuntu)
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[+] robots.txt found: http://10.10.110.100:65000/wordpress/robots.txt
+ | Found By: Robots Txt (Aggressive Detection)
+ | Confidence: 100%
+
+[+] XML-RPC seems to be enabled: http://10.10.110.100:65000/wordpress/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
+
+[+] WordPress readme found: http://10.10.110.100:65000/wordpress/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[+] Debug Log found: http://10.10.110.100:65000/wordpress/wp-content/debug.log
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | Reference: https://codex.wordpress.org/Debugging_in_WordPress
+
+[+] Upload directory has listing enabled: http://10.10.110.100:65000/wordpress/wp-content/uploads/
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[+] The external WP-Cron seems to be enabled: http://10.10.110.100:65000/wordpress/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[+] WordPress version 5.4.1 identified (Insecure, released on 2020-04-29).
+ | Found By: Rss Generator (Passive Detection)
+ |  - http://10.10.110.100:65000/wordpress/index.php/feed/, <generator>https://wordpress.org/?v=5.4.1</generator>
+ |  - http://10.10.110.100:65000/wordpress/index.php/comments/feed/, <generator>https://wordpress.org/?v=5.4.1</generator>
+
+[+] WordPress theme in use: twentyseventeen
+ | Location: http://10.10.110.100:65000/wordpress/wp-content/themes/twentyseventeen/
+ | Last Updated: 2025-04-15T00:00:00.000Z
+ | Readme: http://10.10.110.100:65000/wordpress/wp-content/themes/twentyseventeen/readme.txt
+ | [!] The version is out of date, the latest version is 3.9
+ | Style URL: http://10.10.110.100:65000/wordpress/wp-content/themes/twentyseventeen/style.css?ver=20190507
+ | Style Name: Twenty Seventeen
+ | Style URI: https://wordpress.org/themes/twentyseventeen/
+ | Description: Twenty Seventeen brings your site to life with header video and immersive featured images. With a fo...
+ | Author: the WordPress team
+ | Author URI: https://wordpress.org/
+ |
+ | Found By: Css Style In Homepage (Passive Detection)
+ |
+ | Version: 2.3 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://10.10.110.100:65000/wordpress/wp-content/themes/twentyseventeen/style.css?ver=20190507, Match: 'Version: 2.3'
+
+[+] Enumerating All Plugins (via Passive Methods)
+
+[i] No plugins Found.
+
+[+] Enumerating Config Backups (via Passive and Aggressive Methods)
+ Checking Config Backups - Time: 00:00:05 <===============================================> (137 / 137) 100.00% Time: 00:00:05
+
+[i] Config Backup(s) Identified:
+
+[!] http://10.10.110.100:65000/wordpress/.wp-config.php.swp
+ | Found By: Direct Access (Aggressive Detection)
+
+[!] No WPScan API Token given, as a result vulnerability data has not been output.
+[!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/register
+
+[+] Finished: Wed Oct  1 07:30:27 2025
+[+] Requests Done: 189
+[+] Cached Requests: 6
+[+] Data Sent: 51.665 KB
+[+] Data Received: 22.775 MB
+[+] Memory used: 278.973 MB
+[+] Elapsed time: 00:00:16
+┌─[eu-dedi-pro-61]─[10.10.14.64]─[lukaszfd84@htb-x64wczkesu]─[~]
+└──╼ [★]$
+
+
+┌─[eu-dedi-pro-61]─[10.10.14.64]─[lukaszfd84@htb-x64wczkesu]─[~]
+└──╼ [★]$ wpscan --url http://10.10.110.100:65000/wordpress --enumerate u
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.27
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[+] URL: http://10.10.110.100:65000/wordpress/ [10.10.110.100]
+[+] Started: Wed Oct  1 07:41:10 2025
+
+Interesting Finding(s):
+
+[+] Headers
+ | Interesting Entry: Server: Apache/2.4.41 (Ubuntu)
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[+] robots.txt found: http://10.10.110.100:65000/wordpress/robots.txt
+ | Found By: Robots Txt (Aggressive Detection)
+ | Confidence: 100%
+
+[+] XML-RPC seems to be enabled: http://10.10.110.100:65000/wordpress/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
+
+[+] WordPress readme found: http://10.10.110.100:65000/wordpress/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[+] Debug Log found: http://10.10.110.100:65000/wordpress/wp-content/debug.log
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | Reference: https://codex.wordpress.org/Debugging_in_WordPress
+
+[+] Upload directory has listing enabled: http://10.10.110.100:65000/wordpress/wp-content/uploads/
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[+] The external WP-Cron seems to be enabled: http://10.10.110.100:65000/wordpress/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[+] WordPress version 5.4.1 identified (Insecure, released on 2020-04-29).
+ | Found By: Rss Generator (Passive Detection)
+ |  - http://10.10.110.100:65000/wordpress/index.php/feed/, <generator>https://wordpress.org/?v=5.4.1</generator>
+ |  - http://10.10.110.100:65000/wordpress/index.php/comments/feed/, <generator>https://wordpress.org/?v=5.4.1</generator>
+
+[+] WordPress theme in use: twentyseventeen
+ | Location: http://10.10.110.100:65000/wordpress/wp-content/themes/twentyseventeen/
+ | Last Updated: 2025-04-15T00:00:00.000Z
+ | Readme: http://10.10.110.100:65000/wordpress/wp-content/themes/twentyseventeen/readme.txt
+ | [!] The version is out of date, the latest version is 3.9
+ | Style URL: http://10.10.110.100:65000/wordpress/wp-content/themes/twentyseventeen/style.css?ver=20190507
+ | Style Name: Twenty Seventeen
+ | Style URI: https://wordpress.org/themes/twentyseventeen/
+ | Description: Twenty Seventeen brings your site to life with header video and immersive featured images. With a fo...
+ | Author: the WordPress team
+ | Author URI: https://wordpress.org/
+ |
+ | Found By: Css Style In Homepage (Passive Detection)
+ |
+ | Version: 2.3 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://10.10.110.100:65000/wordpress/wp-content/themes/twentyseventeen/style.css?ver=20190507, Match: 'Version: 2.3'
+
+[+] Enumerating Users (via Passive and Aggressive Methods)
+ Brute Forcing Author IDs - Time: 00:00:01 <================================================> (10 / 10) 100.00% Time: 00:00:01
+
+[i] User(s) Identified:
+
+[+] admin
+ | Found By: Author Posts - Author Pattern (Passive Detection)
+ | Confirmed By:
+ |  Rss Generator (Passive Detection)
+ |  Wp Json Api (Aggressive Detection)
+ |   - http://10.10.110.100:65000/wordpress/index.php/wp-json/wp/v2/users/?per_page=100&page=1
+ |  Author Id Brute Forcing - Author Pattern (Aggressive Detection)
+ |  Login Error Messages (Aggressive Detection)
+
+[+] james
+ | Found By: Wp Json Api (Aggressive Detection)
+ |  - http://10.10.110.100:65000/wordpress/index.php/wp-json/wp/v2/users/?per_page=100&page=1
+ | Confirmed By:
+ |  Author Id Brute Forcing - Author Pattern (Aggressive Detection)
+ |  Login Error Messages (Aggressive Detection)
+
+[!] No WPScan API Token given, as a result vulnerability data has not been output.
+[!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/register
+
+[+] Finished: Wed Oct  1 07:41:22 2025
+[+] Requests Done: 58
+[+] Cached Requests: 8
+[+] Data Sent: 17.782 KB
+[+] Data Received: 554.186 KB
+[+] Memory used: 230.359 MB
+[+] Elapsed time: 00:00:12
+┌─[eu-dedi-pro-61]─[10.10.14.64]─[lukaszfd84@htb-x64wczkesu]─[~]
+└──╼ [★]$
+
+┌─[eu-dedi-pro-61]─[10.10.14.64]─[lukaszfd84@htb-x64wczkesu]─[~]
+└──╼ [★]$ wpscan --url http://10.10.110.100:65000/wordpress --passwords /usr/share/wordlists/rockyou.txt --usernames james
+
+Scan Aborted: --passwords The path '/usr/share/wordlists/rockyou.txt' does not exist or is not a file
+┌─[eu-dedi-pro-61]─[10.10.14.64]─[lukaszfd84@htb-x64wczkesu]─[~]
+└──╼ [★]$ cd /usr/share/wordlists/
+┌─[eu-dedi-pro-61]─[10.10.14.64]─[lukaszfd84@htb-x64wczkesu]─[/usr/share/wordlists]
+└──╼ [★]$ ls -l
+total 52108
+lrwxrwxrwx 1 root root       25 Sep 11 03:48 dirb -> /usr/share/dirb/wordlists
+lrwxrwxrwx 1 root root       30 Sep 11 03:48 dirbuster -> /usr/share/dirbuster/wordlists
+lrwxrwxrwx 1 root root       35 Sep 11 03:48 dnsmap.txt -> /usr/share/dnsmap/wordlist_TLAs.txt
+lrwxrwxrwx 1 root root       41 Sep 11 03:48 fasttrack.txt -> /usr/share/set/src/fasttrack/wordlist.txt
+lrwxrwxrwx 1 root root       28 Sep 11 03:48 john.lst -> /usr/share/john/password.lst
+lrwxrwxrwx 1 root root       46 Sep 11 03:48 metasploit -> /usr/share/metasploit-framework/data/wordlists
+lrwxrwxrwx 1 root root       41 Sep 11 03:48 nmap.lst -> /usr/share/nmap/nselib/data/passwords.lst
+-rw-r--r-- 1 root root 53357329 Sep  8  2023 rockyou.txt.gz
+lrwxrwxrwx 1 root root       19 Sep 11 03:48 seclists -> /usr/share/seclists
+lrwxrwxrwx 1 root root       39 Sep 11 03:48 sqlmap.txt -> /usr/share/sqlmap/data/txt/wordlist.txt
+lrwxrwxrwx 1 root root       25 Sep 11 03:48 wfuzz -> /usr/share/wfuzz/wordlist
+┌─[eu-dedi-pro-61]─[10.10.14.64]─[lukaszfd84@htb-x64wczkesu]─[/usr/share/wordlists]
+└──╼ [★]$ gunzip rockyou.txt.gz
+gzip: rockyou.txt: Permission denied
+┌─[eu-dedi-pro-61]─[10.10.14.64]─[lukaszfd84@htb-x64wczkesu]─[/usr/share/wordlists]
+└──╼ [★]$ sudo gunzip rockyou.txt.gz
+┌─[eu-dedi-pro-61]─[10.10.14.64]─[lukaszfd84@htb-x64wczkesu]─[/usr/share/wordlists]
+└──╼ [★]$ ls -l
+total 136644
+lrwxrwxrwx 1 root root        25 Sep 11 03:48 dirb -> /usr/share/dirb/wordlists
+lrwxrwxrwx 1 root root        30 Sep 11 03:48 dirbuster -> /usr/share/dirbuster/wordlists
+lrwxrwxrwx 1 root root        35 Sep 11 03:48 dnsmap.txt -> /usr/share/dnsmap/wordlist_TLAs.txt
+lrwxrwxrwx 1 root root        41 Sep 11 03:48 fasttrack.txt -> /usr/share/set/src/fasttrack/wordlist.txt
+lrwxrwxrwx 1 root root        28 Sep 11 03:48 john.lst -> /usr/share/john/password.lst
+lrwxrwxrwx 1 root root        46 Sep 11 03:48 metasploit -> /usr/share/metasploit-framework/data/wordlists
+lrwxrwxrwx 1 root root        41 Sep 11 03:48 nmap.lst -> /usr/share/nmap/nselib/data/passwords.lst
+-rw-r--r-- 1 root root 139921507 Sep  8  2023 rockyou.txt
+lrwxrwxrwx 1 root root        19 Sep 11 03:48 seclists -> /usr/share/seclists
+lrwxrwxrwx 1 root root        39 Sep 11 03:48 sqlmap.txt -> /usr/share/sqlmap/data/txt/wordlist.txt
+lrwxrwxrwx 1 root root        25 Sep 11 03:48 wfuzz -> /usr/share/wfuzz/wordlist
+

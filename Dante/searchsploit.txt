@@ -1,0 +1,17 @@
+# Search for exploits related to WordPress 5.4.1
+searchsploit wordpress 5.4.1
+
+┌─[eu-dedi-pro-61]─[10.10.14.64]─[lukaszfd84@htb-x64wczkesu]─[~]
+└──╼ [★]$ searchsploit wordpress 5.4.1
+-------------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                              |  Path
+-------------------------------------------------------------------------------------------- ---------------------------------
+NEX-Forms WordPress plugin < 7.9.7 - Authenticated SQLi                                     | php/webapps/51042.txt
+WordPress Plugin DZS Videogallery < 8.60 - Multiple Vulnerabilities                         | php/webapps/39553.txt
+WordPress Plugin Form Maker 5.4.1 - 's' SQL Injection (Authenticated)                       | php/webapps/48509.txt
+WordPress Plugin iThemes Security < 7.0.3 - SQL Injection                                   | php/webapps/44943.txt
+WordPress Plugin Rest Google Maps < 7.11.18 - SQL Injection                                 | php/webapps/48918.sh
+-------------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+┌─[eu-dedi-pro-61]─[10.10.14.64]─[lukaszfd84@htb-x64wczkesu]─[~]
+└──╼ [★]$
