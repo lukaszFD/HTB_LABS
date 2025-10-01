@@ -41,3 +41,9 @@ find / -name "user.txt" 2>/dev/null
 
 # Find the file named 'root.txt' anywhere on the system
 find / -name "root.txt" 2>/dev/null
+
+# Search for files named user.txt, ignoring case
+find / -iname "user.txt" 2>/dev/null
+
+# Search for files named root.txt, ignoring case
+find / -iname "root.txt" 2>/dev/null
