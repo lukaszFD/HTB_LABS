@@ -1,0 +1,4 @@
+┌─[eu-dedi-pro-61]─[10.10.14.64]─[lukaszfd84@htb-glaiktz6di]─[~]
+└──╼ [★]$ cewl http://10.10.110.100:65000/wordpress/index.php/languages-and-frameworks > word.txt
+┌─[eu-dedi-pro-61]─[10.10.14.64]─[lukaszfd84@htb-glaiktz6di]─[~]
+└──╼ [★]$ sudo nano word.txt
