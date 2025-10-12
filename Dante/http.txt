@@ -1,2 +1,4 @@
+http://10.10.110.100:65000/wordpress/wp-login.php
+
 http://10.10.110.100:65000/wordpress/wp-content/themes/twentynineteen/404.php
 

